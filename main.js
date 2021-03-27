@@ -17,8 +17,12 @@ function Book(title, author, numberOfPages, read) {
 
 Library.prototype.addBook = function (title, author, numberOfPages, read) {
     const book = new Book(title, author, numberOfPages, read);
-    this.books.push(book);
-
+    if (title == undefined || author == undefined || numberOfPages == undefined || read == undefined) {
+        throw new Error('Error! Insufficient data!')
+    }
+    else {
+        this.books.push(book);
+    }
 }
 
 
