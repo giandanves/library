@@ -40,14 +40,14 @@ Library.prototype.findBook = function (title) {
 }
 
 Library.prototype.removeBook = function (title) {
-
-    const i = this.books.findIndex(function (book) {
-        return book.title === title
+    this.books = this.books.filter(function (book) {
+        return (book.title !== title)
     })
 
-    this.books.splice(i, 1);
 
-    //this.books = this.books.filter(function(book) { return book.title !== title) }
+    //const i = this.books.findIndex(function (book) {
+    //return book.title === title
+    //})
 
     //for (let i in this.books) {
     //if (this.books[i].title == title) {
@@ -67,21 +67,5 @@ Book.prototype.info = function () {
             info += (`${this[prop]}. `);
         }
     }
-
     return info;
-
-    //Book.prototype.info = function () {
-    //  return (`${this.title}, by ${this.author}. ${this.numberOfPages}, ${this.read}`);
-    //}
 }
-
-
-
-const harryPotter4 = new Book('Harry Potter and the Goblet of Fire', 'JK Rowling', 480, 'not read');
-
-
-libraryOne.books.push(harryPotter4);
-
-//Book.prototype.info = function () {
-//  return (`${this.title}, by ${this.author}. ${this.numberOfPages}, ${this.read}`);
-//}
