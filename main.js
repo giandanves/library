@@ -1,7 +1,10 @@
 
-function Library() {
-    this.books = new Array();
-}
+    const info = () => {
+        console.log({
+            title, author, numberOfPages, read
+        })
+
+    }
 
 
 const libraryOne = new Library();
